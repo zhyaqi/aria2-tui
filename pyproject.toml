@@ -1,0 +1,31 @@
+[project]
+name = "aria2-tui"
+version = "0.2.0"
+description = "A minimal, native-feeling aria2 download console for the terminal"
+readme = "README.md"
+authors = [
+    { name = "zhaiyaqi" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.28.0",
+    "textual>=8.1.0",
+]
+
+[project.scripts]
+aria2-tui = "aria2_tui.app:main"
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=1.0",
+    "respx>=0.22",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
